@@ -16,9 +16,8 @@ import {
   Platform,
 } from 'react-native';
 
-import ImagePicker from 'react-native-image-crop-picker';
-import Slider from '@react-native-community/slider';
 import CameraRoll from '@react-native-community/cameraroll';
+import HomeScreen from './src/screens/HomeScreen';
 
 const App = () => {
   async function hasAndroidPermission() {
@@ -43,7 +42,7 @@ const App = () => {
   return (
     <>
       <SafeAreaView>
-        <TouchableOpacity
+        {/* <TouchableOpacity
           onPress={() => {
             ImagePicker.openCamera({
               width: 300,
@@ -54,48 +53,8 @@ const App = () => {
             });
           }}>
           <Text>Test</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => {
-            ImagePicker.openPicker({
-              width: 300,
-              height: 400,
-              cropping: true,
-            }).then((image) => {
-              console.log(image);
-            });
-          }}>
-          <Text>Gallery</Text>
-        </TouchableOpacity>
-        <Image
-          style={{
-            height: 100,
-            width: 100,
-          }}
-          source={{
-            uri: 'FILE_PATH',
-          }}
-        />
-        {/* <Image
-          style={{
-            height: 100,
-            width: 100,
-          }}
-          source={{
-            uri:
-              'FILE_PATH',
-          }}
-        /> */}
-        <Slider
-          style={{width: 200, height: 40}}
-          minimumValue={0}
-          maximumValue={1}
-          minimumTrackTintColor="blue"
-          maximumTrackTintColor="#000000"
-        />
-        <TouchableOpacity onPress={() => savePicture()}>
-          <Text>Save to local</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
+        <HomeScreen />
       </SafeAreaView>
     </>
   );
